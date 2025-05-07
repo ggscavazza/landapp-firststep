@@ -1,7 +1,7 @@
 # Dados do candidato
 
-Nome: Gustavo Gonçalves Scavazza
-E-mail: ggscavazza.php@gmail.com
+- Nome: Gustavo Gonçalves Scavazza
+- E-mail: ggscavazza.php@gmail.com
 
 # 🧪 Case Técnico — Desenvolvedor Front End Pleno
 
