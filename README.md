@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dados do candidato
 
-## Getting Started
+Nome: Gustavo Gonçalves Scavazza
+E-mail: ggscavazza.php@gmail.com
 
-First, run the development server:
+# 🧪 Case Técnico — Desenvolvedor Front End Pleno
+
+Este projeto é uma solução para o case técnico da vaga de Desenvolvedor Front End Pleno, contendo duas etapas:
+
+- Interface de Login responsiva com validações
+- Integração com API externa exibindo dados com experiência avançada de usuário
+
+## 🧱 Tecnologias Utilizadas
+
+- **Next.js 15** com App Router
+- **React 19** (Client components)
+- **TypeScript**
+- **Tailwind CSS** para estilização
+- `IntersectionObserver` para scroll infinito
+- `clsx` para manipulação condicional de classes
+
+## 🚀 Como rodar o projeto localmente
 
 ```bash
+# Clone o repositório
+git clone https://github.com/ggscavazza/landapp-firststep.git
+cd landapp-firststep
+
+# Instale as dependências
+npm install
+
+# Rode o projeto em ambiente de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Acesse:
+http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✅ Funcionalidades por desafio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 💻 Desafio 1 — Interface Responsiva
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✔ Tela de login com campos para e-mail e senha  
+✔ Validação básica de e-mail e senha forte (mínimo 8 caracteres, 1 maiúscula, 1 caractere especial)  
+✔ Exibição de erro em alert estilizado  
+✔ Redirecionamento automático para `/home` após login  
+✔ Componente reutilizável de botão, input e logo  
+✔ Responsivo para mobile e desktop  
+✔ Tema visual limpo e consistente com boas práticas de design
 
-## Learn More
+### 🌐 Desafio 2 — Integração com API Externa
 
-To learn more about Next.js, take a look at the following resources:
+✔ Consumo da API pública [`https://jsonplaceholder.typicode.com/posts`](https://jsonplaceholder.typicode.com/posts)  
+✔ Exibição de posts em formato de cartão (título e corpo)  
+✔ Scroll infinito com `IntersectionObserver`  
+✔ Skeleton loading durante carregamento de dados  
+✔ Modal para visualização completa do post  
+✔ Mensagem de erro personalizada em falha de requisição  
+✔ Navbar fixa com logo, nome da tela atual e botão "Sair"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Estrutura de componentes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/
+│   ├── login/          # Tela de login
+│   ├── home/           # Tela de listagem de posts
+│   └── layout.tsx      # Layout global com CSS base
+│
+├── components/
+│   ├── Alert.tsx       # Alertas de erro/sucesso
+│   ├── Button.tsx      # Botão reutilizável
+│   ├── Input.tsx       # Campo de input reutilizável
+│   ├── Logo.tsx        # Logo centralizado
+│   ├── Navbar.tsx      # Topo com título e botão sair
+│   ├── PostCard.tsx    # Cartão de post
+│   └── PostModal.tsx   # Modal de post
+```
 
-## Deploy on Vercel
+## 📄 Documentação técnica
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Este README
