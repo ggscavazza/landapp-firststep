@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-
+import Logo from '@/components/Logo';
+import Button from '@/components/Button';
+import Input from '@/components/Input';
+import Alert from '@/components/Alert';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -34,57 +36,40 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
         <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
-            <div className="flex justify-center mb-4">
-                <Image
-                    src="/images/logo.png"      // caminho dentro da pasta /public
-                    alt="Logo"
-                    width={128}            // largura da imagem em pixels
-                    height={128}           // altura da imagem em pixels
-                    priority              // importante para carregar no início (LCP)
-                />
-            </div>
+            <Logo />
 
             <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">Entrar</h1>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
-                        E-mail
-                        </label>
-                        
-                        <input
-                            id="email"
-                            type="email"
-                            className="w-full border text-gray-700 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                </div>
+                {error && (
+                    <Alert type="error">
+                        {error}
+                    </Alert>
+                )}
 
-                <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="password">
-                        Senha
-                    </label>
-                    
-                    <input
-                        id="password"
-                        type="password"
-                        className="w-full border text-gray-700 border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
+                <Input
+                    id="email"
+                    label="E-mail"
+                    type="email"
+                    className='w-full border text-gray-700 border-gray-300 focus:ring-orange-500'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                
+                <Input
+                    id="password"
+                    label="Senha"
+                    type="password"
+                    className='w-full border text-gray-700 border-gray-300 focus:ring-orange-500'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />                
 
-                {error && <p className="text-red-500 text-sm">{error}</p>}
-
-                <button
-                    type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-semibold py-2 px-4 rounded-lg transition"
-                >
+                <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white">
                     Entrar
-                </button>
+                </Button>
             </form>
         </div>
     </main>
